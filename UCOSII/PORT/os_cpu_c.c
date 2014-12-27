@@ -23,8 +23,8 @@
 */
 
 #define  OS_CPU_GLOBALS
+#include <ucos_ii.h>
 
-#include "includes.h"
 /*
 *********************************************************************************************************
 *                                          LOCAL VARIABLES
@@ -35,6 +35,21 @@
 static  INT16U  OSTmrCtr;
 #endif
 
+/*
+*********************************************************************************************************
+*                                          SYS TICK DEFINES
+*********************************************************************************************************
+*/
+
+//#define  OS_CPU_CM3_NVIC_ST_CTRL    (*((volatile INT32U *)0xE000E010))   /* SysTick Ctrl & Status Reg. */
+//#define  OS_CPU_CM3_NVIC_ST_RELOAD  (*((volatile INT32U *)0xE000E014))   /* SysTick Reload  Value Reg. */
+//#define  OS_CPU_CM3_NVIC_ST_CURRENT (*((volatile INT32U *)0xE000E018))   /* SysTick Current Value Reg. */
+//#define  OS_CPU_CM3_NVIC_ST_CAL     (*((volatile INT32U *)0xE000E01C))   /* SysTick Cal     Value Reg. */
+//
+//#define  OS_CPU_CM3_NVIC_ST_CTRL_COUNT                    0x00010000     /* Count flag.                */
+//#define  OS_CPU_CM3_NVIC_ST_CTRL_CLK_SRC                  0x00000004     /* Clock Source.              */
+//#define  OS_CPU_CM3_NVIC_ST_CTRL_INTEN                    0x00000002     /* Interrupt enable.          */
+//#define  OS_CPU_CM3_NVIC_ST_CTRL_ENABLE                   0x00000001     /* Counter mode.              */
 
 /*
 *********************************************************************************************************
@@ -198,56 +213,17 @@ OS_STK *OSTaskStkInit (void (*task)(void *p_arg), void *p_arg, OS_STK *ptos, INT
     (void)opt;                                   /* 'opt' is not used, prevent warning                 */
     stk       = ptos;                            /* Load stack pointer                                 */
 
-#if (__FPU_PRESENT==1)&&(__FPU_USED==1)	
-	*(--stk) = (INT32U)0x00000000L; //No Name Register  
-	*(--stk) = (INT32U)0x00001000L; //FPSCR
-	*(--stk) = (INT32U)0x00000015L; //s15
-	*(--stk) = (INT32U)0x00000014L; //s14
-	*(--stk) = (INT32U)0x00000013L; //s13
-	*(--stk) = (INT32U)0x00000012L; //s12
-	*(--stk) = (INT32U)0x00000011L; //s11
-	*(--stk) = (INT32U)0x00000010L; //s10
-	*(--stk) = (INT32U)0x00000009L; //s9
-	*(--stk) = (INT32U)0x00000008L; //s8
-	*(--stk) = (INT32U)0x00000007L; //s7
-	*(--stk) = (INT32U)0x00000006L; //s6
-	*(--stk) = (INT32U)0x00000005L; //s5
-	*(--stk) = (INT32U)0x00000004L; //s4
-	*(--stk) = (INT32U)0x00000003L; //s3
-	*(--stk) = (INT32U)0x00000002L; //s2
-	*(--stk) = (INT32U)0x00000001L; //s1
-	*(--stk) = (INT32U)0x00000000L; //s0
-#endif
                                                  /* Registers stacked as if auto-saved on exception    */
     *(stk)    = (INT32U)0x01000000L;             /* xPSR                                               */
     *(--stk)  = (INT32U)task;                    /* Entry Point                                        */
-    *(--stk)  = (INT32U)OS_TaskReturn;           /* R14 (LR) (init value will cause fault if ever used)*/
+    *(--stk)  = (INT32U)0xFFFFFFFEL;             /* R14 (LR) (init value will cause fault if ever used)*/
     *(--stk)  = (INT32U)0x12121212L;             /* R12                                                */
     *(--stk)  = (INT32U)0x03030303L;             /* R3                                                 */
     *(--stk)  = (INT32U)0x02020202L;             /* R2                                                 */
     *(--stk)  = (INT32U)0x01010101L;             /* R1                                                 */
     *(--stk)  = (INT32U)p_arg;                   /* R0 : argument                                      */
 
-#if (__FPU_PRESENT==1)&&(__FPU_USED==1)	
-	*(--stk) = (INT32U)0x00000031L; //s31
-	*(--stk) = (INT32U)0x00000030L; //s30
-	*(--stk) = (INT32U)0x00000029L; //s29
-	*(--stk) = (INT32U)0x00000028L; //s28
-	*(--stk) = (INT32U)0x00000027L; //s27
-	*(--stk) = (INT32U)0x00000026L; //s26	
-	*(--stk) = (INT32U)0x00000025L; //s25
-	*(--stk) = (INT32U)0x00000024L; //s24
-	*(--stk) = (INT32U)0x00000023L; //s23
-	*(--stk) = (INT32U)0x00000022L; //s22
-	*(--stk) = (INT32U)0x00000021L; //s21
-	*(--stk) = (INT32U)0x00000020L; //s20
-	*(--stk) = (INT32U)0x00000019L; //s19
-	*(--stk) = (INT32U)0x00000018L; //s18
-	*(--stk) = (INT32U)0x00000017L; //s17
-	*(--stk) = (INT32U)0x00000016L; //s16
-#endif
-		
-                                                /* Remaining registers saved on process stack         */
+                                                 /* Remaining registers saved on process stack         */
     *(--stk)  = (INT32U)0x11111111L;             /* R11                                                */
     *(--stk)  = (INT32U)0x10101010L;             /* R10                                                */
     *(--stk)  = (INT32U)0x09090909L;             /* R9                                                 */
@@ -335,18 +311,58 @@ void  OSTimeTickHook (void)
 }
 #endif
 
-#if OS_CPU_HOOKS_EN > 0u && OS_VERSION > 290u 
-
-void OSTaskReturnHook(OS_TCB *ptcb)
-{ 
-	(void)ptcb; 
-} 
-
-#endif
 
 
+/*
+*********************************************************************************************************
+*                                         OS_CPU_SysTickHandler()
+*
+* Description: Handle the system tick (SysTick) interrupt, which is used to generate the uC/OS-II tick
+*              interrupt.
+*
+* Arguments  : none.
+*
+* Note(s)    : 1) This function MUST be placed on entry 15 of the Cortex-M3 vector table.
+*********************************************************************************************************
+*/
+
+//void  OS_CPU_SysTickHandler (void)
+//{
+//    OS_CPU_SR  cpu_sr;
+//
+//
+//    OS_ENTER_CRITICAL();                         /* Tell uC/OS-II that we are starting an ISR          */
+//    OSIntNesting++;
+//    OS_EXIT_CRITICAL();
+//
+//    OSTimeTick();                                /* Call uC/OS-II's OSTimeTick()                       */
+//
+//    OSIntExit();                                 /* Tell uC/OS-II that we are leaving the ISR          */
+//}
 
 
+/*
+*********************************************************************************************************
+*                                          OS_CPU_SysTickInit()
+*
+* Description: Initialize the SysTick.
+*
+* Arguments  : none.
+*
+* Note(s)    : 1) This function MUST be called after OSStart() & after processor initialization.
+*********************************************************************************************************
+*/
 
-
-/*----------------------- (C) COPYRIGHT @ 2012 liycobl -----------------  end of file -----------------*/
+//void  OS_CPU_SysTickInit (void)
+//{
+//    INT32U  cnts;
+//
+//
+//    cnts = OS_CPU_SysTickClkFreq() / OS_TICKS_PER_SEC;
+//
+//    OS_CPU_CM3_NVIC_ST_RELOAD = (cnts - 1);
+//                                                 /* Enable timer.                                      */
+//    OS_CPU_CM3_NVIC_ST_CTRL  |= OS_CPU_CM3_NVIC_ST_CTRL_CLK_SRC | OS_CPU_CM3_NVIC_ST_CTRL_ENABLE;
+//                                                 /* Enable timer interrupt.                            */
+//    OS_CPU_CM3_NVIC_ST_CTRL  |= OS_CPU_CM3_NVIC_ST_CTRL_INTEN;
+//}

@@ -1,16 +1,16 @@
 /**
   ******************************************************************************
-  * @file    Project/STM32F4xx_StdPeriph_Templates/stm32f4xx_it.c 
+  * @file    GPIO/IOToggle/stm32f4xx_it.c 
   * @author  MCD Application Team
-  * @version V1.4.0
-  * @date    04-August-2014
+  * @version V1.0.1
+  * @date    13-April-2012
   * @brief   Main Interrupt Service Routines.
   *          This file provides template for all exceptions handler and 
   *          peripherals interrupt service routine.
   ******************************************************************************
   * @attention
   *
-  * <h2><center>&copy; COPYRIGHT 2014 STMicroelectronics</center></h2>
+  * <h2><center>&copy; COPYRIGHT 2012 STMicroelectronics</center></h2>
   *
   * Licensed under MCD-ST Liberty SW License Agreement V2, (the "License");
   * You may not use this file except in compliance with the License.
@@ -29,11 +29,14 @@
 
 /* Includes ------------------------------------------------------------------*/
 #include "stm32f4xx_it.h"
- 
-
-/** @addtogroup Template_Project
+#include "ucos_ii.h"
+/** @addtogroup STM32F4xx_StdPeriph_Examples
   * @{
   */
+
+/** @addtogroup IOToggle
+  * @{
+  */ 
 
 /* Private typedef -----------------------------------------------------------*/
 /* Private define ------------------------------------------------------------*/
@@ -47,7 +50,7 @@
 /******************************************************************************/
 
 /**
-  * @brief  This function handles NMI exception.
+  * @brief   This function handles NMI exception.
   * @param  None
   * @retval None
   */
@@ -125,7 +128,34 @@ void DebugMon_Handler(void)
 {
 }
 
- 
+/**
+  * @brief  This function handles PendSVC exception.
+  * @param  None
+  * @retval None
+  */
+//void PendSV_Handler(void)
+//{
+//}
+
+/**
+  * @brief  This function handles SysTick Handler.
+  * @param  None
+  * @retval None
+  */
+void SysTick_Handler(void)
+{
+    OS_CPU_SR  cpu_sr;
+
+
+    OS_ENTER_CRITICAL();                         /* Tell uC/OS-II that we are starting an ISR          */
+    OSIntNesting++;
+    OS_EXIT_CRITICAL();
+
+    OSTimeTick();                                /* Call uC/OS-II's OSTimeTick()                       */
+
+    OSIntExit();                                 /* Tell uC/OS-II that we are leaving the ISR          */
+
+}
 
 /******************************************************************************/
 /*                 STM32F4xx Peripherals Interrupt Handlers                   */
@@ -134,6 +164,23 @@ void DebugMon_Handler(void)
 /*  file (startup_stm32f4xx.s).                                               */
 /******************************************************************************/
 
+
+/**
+  * @brief  This function handles PPP interrupt request.
+  * @param  None
+  * @retval None
+  */
+void USART3_IRQHandler(void)
+{
+	unsigned char ch;				
+	if(USART_GetITStatus(USART3, USART_IT_RXNE) != RESET)
+	{
+		/* Read one byte from the receive data register */
+		ch = (USART_ReceiveData(USART3));
+
+		printf("hello, you input[%c].\r\n",ch);
+	}  	
+}
 /**
   * @brief  This function handles PPP interrupt request.
   * @param  None
@@ -147,5 +194,8 @@ void DebugMon_Handler(void)
   * @}
   */ 
 
+/**
+  * @}
+  */ 
 
 /************************ (C) COPYRIGHT STMicroelectronics *****END OF FILE****/
