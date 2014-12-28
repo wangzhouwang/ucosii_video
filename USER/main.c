@@ -26,11 +26,7 @@
   */
 
 /* Includes ------------------------------------------------------------------*/
-#include "stm32f4xx.h"
-#include "ucos_ii.h"
-#include <stdio.h>
-#include "Gpio.h"
-#include "uart.h"
+#include "appcommon.h"
 
 
 #define STARTUP_TASK_PRIO     4
@@ -64,7 +60,12 @@ static void startup_task(void *p_arg)
     OSStatInit();
 #endif
 
-    uart_init();
+		uart_init();
+		ov7670_check();
+		ov7670_init();
+		lcd_init();
+		systick_delay_ms(500);
+		cam_start();
 		printf("uart init finish\n");
 #if	OS_SEM_EN>0
 	/*创建一个拥有1个资源的信号量*/
@@ -77,6 +78,9 @@ static void startup_task(void *p_arg)
     
     OSTaskCreate(task1,(void*)0,&task1_stk[TASK1_STK_SIZE - 1],TASK1_PRIO);
     OSTaskCreate(task2,(void*)0,&task2_stk[TASK2_STK_SIZE - 1],TASK2_PRIO);
+    
+    /* 初始化shell */
+    shell_task_init();
 
     OSTaskDel(OS_PRIO_SELF);
 }
@@ -94,30 +98,20 @@ static void task1(void *p_arg)
 {
 	INT8U	err;
 
-    LEDGpio_Init();
+    //LEDGpio_Init();
 
 
 
     for(;;)
     {
-      	/*请求信号量*/
-		OSSemPend(Sem1,0,&err);
-        printf("\r\n hello! \r\n");
-        LED1_ONOFF(Bit_RESET);
-        OSTimeDly(500);
-        LED1_ONOFF(Bit_SET);
-        OSTimeDly(500);
-        LED2_ONOFF(Bit_RESET);
-        OSTimeDly(500);
-        LED2_ONOFF(Bit_SET);
-        OSTimeDly(500);
-        LED3_ONOFF(Bit_RESET);
-        OSTimeDly(500);
-        LED3_ONOFF(Bit_SET);
-        OSTimeDly(500);
+		char ch;
 
-        /*释放信号量*/
-		OSSemPost(Sem1);
+		//err = uart_get_char(&ch);
+		if(err == 1)
+		{
+			//printf("%c",ch);
+		}
+		OSTimeDly(1);
     }
 }
 
@@ -127,19 +121,13 @@ static void task2(void *p_arg)
 
     for(;;)
     {   
-        /*请求信号量*/
+		/*请求信号量*/
 		OSSemPend(Sem1,0,&err);
 
-        printf("\r\n hello! \r\n");
-        LED4_ONOFF(Bit_RESET);
-        OSTimeDly(500);
-        LED4_ONOFF(Bit_SET);
-        OSTimeDly(500);
-        //
-           
-        /*释放信号量*/
+		   
+		/*释放信号量*/
 		OSSemPost(Sem1); 
-        OSTimeDly(500);        
+		OSTimeDly(500);        
     }
 }
 

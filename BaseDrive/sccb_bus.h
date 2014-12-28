@@ -1,10 +1,10 @@
 /**
   ******************************************************************************
-  * @file    uart.h 
+  * @file    sccb_bus.h 
   * @author  WangBao Dev Team
   * @version V1.0.0
   * @date    07-10-2012
-  * @brief   Header for uart.c module
+  * @brief   Header for ov7670.c module
   ******************************************************************************
   * @attention
   *
@@ -19,19 +19,34 @@
   ******************************************************************************
   */ 
  
-#ifndef _UART_H_
-#define _UART_H_
+#ifndef _SCCB_BUS_H_
+#define _SCCB_BUS_H_
 
 
 #include "stm32f4xx.h"
-#include "ucos_ii.h"
 
-void uart_init(void);
 
-void uart_put_char(INT8U ch);
+#define SCCB_SIC_H()     GPIOF->BSRRL = GPIO_Pin_9
+#define SCCB_SIC_L()     GPIOF->BSRRH = GPIO_Pin_9
+#define SCCB_SID_H()     GPIOF->BSRRL = GPIO_Pin_8
+#define SCCB_SID_L()     GPIOF->BSRRH = GPIO_Pin_8
+#define SCCB_DATA_IN     sccb_bus_data_in()
+#define SCCB_DATA_OUT    sccb_bus_data_out()
+#define SCCB_SID_STATE	 GPIOF->IDR&0x0100
 
-INT8U uart_get_char(INT8U *ch);
 
-#endif /* _UART_H_ */
+
+void systick_delay_ms(u16 nms);	    								   
+void systick_delay_us(u32 nus);
+
+void sccb_bus_init(void);
+void sccb_bus_start(void);
+void sccb_bus_stop(void);
+void sccb_bus_send_noack(void);
+uint8_t sccb_bus_write_byte(uint8_t data);
+uint8_t sccb_bus_read_byte(void);
+
+
+#endif /* _SCCB_BUS_H_ */
 
 /******************* (C) COPYRIGHT 2012 WangBao *****END OF FILE****/

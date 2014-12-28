@@ -170,22 +170,6 @@ void SysTick_Handler(void)
   * @param  None
   * @retval None
   */
-void USART3_IRQHandler(void)
-{
-	unsigned char ch;				
-	if(USART_GetITStatus(USART3, USART_IT_RXNE) != RESET)
-	{
-		/* Read one byte from the receive data register */
-		ch = (USART_ReceiveData(USART3));
-
-		printf("hello, you input[%c].\r\n",ch);
-	}  	
-}
-/**
-  * @brief  This function handles PPP interrupt request.
-  * @param  None
-  * @retval None
-  */
 /*void PPP_IRQHandler(void)
 {
 }*/

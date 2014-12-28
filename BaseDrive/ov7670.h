@@ -1,10 +1,10 @@
 /**
   ******************************************************************************
-  * @file    uart.h 
+  * @file    ov7670.h 
   * @author  WangBao Dev Team
   * @version V1.0.0
   * @date    07-10-2012
-  * @brief   Header for uart.c module
+  * @brief   Header for ov7670.c module
   ******************************************************************************
   * @attention
   *
@@ -19,19 +19,21 @@
   ******************************************************************************
   */ 
  
-#ifndef _UART_H_
-#define _UART_H_
+#ifndef _OV7670_H_
+#define _OV7670_H_
 
 
 #include "stm32f4xx.h"
-#include "ucos_ii.h"
 
-void uart_init(void);
+#define DCMI_DR_ADDRESS       	0x50050028   
+#define FSMC_LCD_ADDRESS      	0x6C000002
 
-void uart_put_char(INT8U ch);
 
-INT8U uart_get_char(INT8U *ch);
+uint8_t ov7670_check(void);
+uint8_t ov7670_init(void);
+void cam_start(void);
 
-#endif /* _UART_H_ */
+
+#endif /* _OV7670_H_ */
 
 /******************* (C) COPYRIGHT 2012 WangBao *****END OF FILE****/

@@ -20,8 +20,27 @@
   */ 
 #include "uart.h"
 #include "stdio.h"
+#include "ringbuffer.h"
 
+#define UART3_RX_RINGBUF_LEN				200
+/* 定义一个ringbuffer做串口缓存 */
+static rt_uint8_t Uart3RXDatBuf[UART3_RX_RINGBUF_LEN];
+static struct rt_ringbuffer Uart3RXRingBuf;
 
+static void nvic_config(void)
+{
+	NVIC_InitTypeDef NVIC_InitStructure;
+	/* NVIC configuration */
+	/* Configure the Priority Group to 2 bits */
+	NVIC_PriorityGroupConfig(NVIC_PriorityGroup_2);
+
+	/* Enable the USARTx Interrupt */
+	NVIC_InitStructure.NVIC_IRQChannel = USART3_IRQn;
+	NVIC_InitStructure.NVIC_IRQChannelPreemptionPriority = 0;
+	NVIC_InitStructure.NVIC_IRQChannelSubPriority = 0;
+	NVIC_InitStructure.NVIC_IRQChannelCmd = ENABLE;
+	NVIC_Init(&NVIC_InitStructure);
+}
 
 void uart_init(void)
 {
@@ -57,9 +76,14 @@ void uart_init(void)
 
 	USART_Init(USART3, &USART_InitStructure);
 
+	nvic_config();
+	
 	/* 使能串口3 */
 	USART_Cmd(USART3, ENABLE);
 	USART_ITConfig(USART3, USART_IT_RXNE, ENABLE);
+
+	/* 初始化缓存 */
+	rt_ringbuffer_init(&Uart3RXRingBuf,Uart3RXDatBuf,UART3_RX_RINGBUF_LEN);
 }
 
 int fputc(int ch, FILE *f)
@@ -74,4 +98,47 @@ int fputc(int ch, FILE *f)
 
 	return ch;
 }
+
+void uart_put_char(INT8U ch)
+{
+	USART_SendData(USART3, (uint8_t) ch);
+
+	/* Loop until the end of transmission */
+	while (USART_GetFlagStatus(USART3, USART_FLAG_TXE) == RESET)
+	{}
+}
+
+INT8U uart_get_char(INT8U *ch)
+{	
+	return rt_ringbuffer_getchar(&Uart3RXRingBuf,(rt_uint8_t *)ch);
+}
+
+
+
+
+
+/*****************************************************************************************
+*一下区域为中断服务函数
+*/
+/**
+  * @brief  This function handles PPP interrupt request.
+  * @param  None
+  * @retval None
+  */
+void USART3_IRQHandler(void)
+{
+	unsigned char ch;				
+
+	OSIntEnter();
+	
+	if(USART_GetITStatus(USART3, USART_IT_RXNE) != RESET)
+	{
+		/* Read one byte from the receive data register */
+		ch = (USART_ReceiveData(USART3));
+		rt_ringbuffer_putchar(&Uart3RXRingBuf,ch);
+	}
+
+	OSIntExit();
+}
+
 
