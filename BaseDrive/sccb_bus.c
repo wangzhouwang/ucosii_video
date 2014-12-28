@@ -32,11 +32,11 @@ void systick_delay_ms(u16 nms)
 		    								   
 void systick_delay_us(u32 nus)
 {		
-  unsigned int i,y;
+  volatile unsigned int i,y;
   
   for(i = 0; i < nus; i++)
   {
-    for(y = 0; y < 200; y++);
+    for(y = 0; y < 10; y++);
   }
 }
 
