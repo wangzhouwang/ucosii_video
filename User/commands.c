@@ -12,6 +12,14 @@
 /***************************new**********************************/   
 #include "uart.h"
 /***************************new**********************************/   
+
+#define  OS_USING_DEBUG
+#ifdef OS_USING_DEBUG
+#define kprintf		printf
+#else
+#define kprintf(...)		
+#endif
+
 #define ERRORCOMMAND    	255  	//命令错误
 #define MaxLenComBuf    		100  	//命令缓存大小
 
@@ -20,6 +28,37 @@ char 	*argv[10];
 INT8U argc;   
 INT8U CommandAnalys(char *Buf);   
 
+
+/******************************************************************************************
+* shell　移植接口
+*/
+
+/**
+  * @brief  shell 从终端获取一个字节	
+  * @param  ch 字节数据的地址				
+  * @retval 0 没有数据							
+	* 				 1 有数据								
+  */
+static INT8U shell_get_char(INT8U *ch)
+{
+	return uart_get_char(ch);
+}
+
+/**
+  * @brief  shell 输出一个字节
+  * @param  ch 字节数据
+  * @retval None
+  */
+static void shell_put_char(INT8U ch)
+{
+	uart_put_char(ch);
+}
+
+
+/******************************************************************************************
+*	shell 功能函数
+*
+*/
 
 /**
   * @brief  命令导出函数接口
@@ -31,7 +70,7 @@ INT8U CommandAnalys(char *Buf);
 void command_export(INT8U (*CommandFunc)(INT8U argc,char **argv),const char *Name,const char *help)
 {
 	INT8U i;
-	
+
 	if(ShellComms[ShellComms[0].num].num >= MAX_COMMAND_NUM)
 	{
 		printf("Command number is full plaese change MAX_COMMAND_NUM define \n\r");
@@ -83,10 +122,15 @@ static INT8U InitCommands(void)
 
 //////////////////////////////////////////////////////////////////////////////////////////////////////////////////   
 
+#ifndef SHELL_TASK_STK_SIZE
 #define SHELL_TASK_STK_SIZE 		128 //堆栈
-#define SHELL_TASK_PRIO        		7		//优先级
+#endif
 
-static void shell_task(void *Id) ;            //Main_Test_Task   
+#ifndef SHELL_TASK_PRIO
+#define SHELL_TASK_PRIO        		7		//优先级
+#endif	
+
+static void shell_task_entry(void *Id) ;            //Main_Test_Task   
 static OS_STK task_stk[SHELL_TASK_STK_SIZE];
 
 /**
@@ -96,11 +140,21 @@ static OS_STK task_stk[SHELL_TASK_STK_SIZE];
   */  
 void shell_task_init(void)
 {
-  OSTaskCreate(shell_task,(void*)0,&task_stk[SHELL_TASK_STK_SIZE - 1],SHELL_TASK_PRIO);
+	INT8U result;
+	
+   result = OSTaskCreate(shell_task_entry,(void*)0,&task_stk[SHELL_TASK_STK_SIZE - 1],SHELL_TASK_PRIO);
+   if(result != OS_ERR_NONE)
+   {
+		kprintf("Shell Task Create Fail\n\r");
+   }
 }
 
-
-static void shell_task(void *Id)             //Main_Test_Task   
+/**
+  * @brief  shell 任务			
+  * @param  Id 任务参数				
+  * @retval None
+  */  
+static void shell_task_entry(void *Id)             //Main_Test_Task   
 {   
 
     INT8U i=0,num,err;      /*i is the pointer of commandbuf */   
@@ -112,27 +166,28 @@ static void shell_task(void *Id)             //Main_Test_Task
     CommandBuf[0] = '\0';   
    
     printf("\n\r***********************************************\n");   
-    printf("\n\r*           Welcom to fighter shell               *\n");   
-    printf("\n\r*           Author:fighter 2014-12-28          *\n");   
+    printf("\n\r*           Welcom to fighter shell           *\n");   
+    printf("\n\r*           Author:fighter 2014-12-28         *\n");   
     printf("\n\r***********************************************\n\r");   
            
 	/*To be done: Login & Password*/   
    
     printf("\nBEGIN UCOS SHELL,press any to continue.....");   
-    uart_get_char((INT8U *)c1);   
+    shell_get_char((INT8U *)c1);   
     printf("\n\rc:\\sk>");   
     while(1)
     {   
         do
         {                
         	/* only accept a-z,0-9,A-Z,.,space,/,-   */
-			err = uart_get_char((INT8U *)c1);   
+			err = shell_get_char((INT8U *)c1);   
 			if(err == 1)
 			{
 				ch=c1[0];   
 			}
 			else
 			{
+				OSTimeDly(1);
 				ch = 0;
 			}
         }while(!((ch>='0'&&ch<='9')||(ch>='a'&&ch<='z')||(ch>='A'&&ch<='Z')||(ch=='.')||(ch==' ')||(ch=='-')||(ch=='/')||(ch=='\r')||(ch=='\b')||(ch==',')));   
@@ -183,9 +238,9 @@ static void shell_task(void *Id)             //Main_Test_Task
 			else
 			{   
 				i--;            //pointer back once   
-				uart_put_char('\b');      //cursor back once   
-				uart_put_char(' ');         //earse last char in screen   
-				uart_put_char('\b');      //cursor back again   
+				shell_put_char('\b');      //cursor back once   
+				shell_put_char(' ');         //earse last char in screen   
+				shell_put_char('\b');      //cursor back again   
 				//moverel(-1,0);   
 			}   
 			break;   
@@ -200,7 +255,7 @@ static void shell_task(void *Id)             //Main_Test_Task
 			{   
 				CommandBuf[i] = ch;   
 				i++;   
-				uart_put_char(ch);  //display and store ch   
+				shell_put_char(ch);  //display and store ch   
 			}   
 			break;   
         }
@@ -214,7 +269,7 @@ static void shell_task(void *Id)             //Main_Test_Task
 			{   
   				CommandBuf[i] = ch;   
   				i++;   
-  				uart_put_char(ch);  //display and store ch   
+  				shell_put_char(ch);  //display and store ch   
 			}   
        	break;   
         }
@@ -222,7 +277,12 @@ static void shell_task(void *Id)             //Main_Test_Task
        OSTimeDly(OS_TICKS_PER_SEC/100);   
     }//for(;;)   
 }   
-   
+
+/**
+  * @brief  shell 解析函数			
+  * @param  buf 命令	
+  * @retval None
+  */  
 INT8U CommandAnalys(char *Buf)   
 {   
     INT8U i;   
