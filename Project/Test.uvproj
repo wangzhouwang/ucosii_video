@@ -427,6 +427,11 @@
               <FileType>1</FileType>
               <FilePath>..\User\commands.c</FilePath>
             </File>
+            <File>
+              <FileName>camera.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\User\camera.c</FilePath>
+            </File>
           </Files>
         </Group>
         <Group>
