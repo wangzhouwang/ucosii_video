@@ -1,7 +1,12 @@
 
 #include "lcd.h"
 
-
+#define  OS_USING_DEBUG
+#ifdef OS_USING_DEBUG
+#define kprintf		printf
+#else
+#define kprintf(...)		
+#endif
 
 
 void write_cmd(unsigned short cmd);
@@ -394,4 +399,5 @@ void lcd_init(void)
 	//数据总线测试,用于测试硬件连接是否正常.
 	lcd_data_bus_test();
 	lcd_clear(Red);	
+	kprintf("LCD Init Finish\n\r");
 }
