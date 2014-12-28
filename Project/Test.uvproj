@@ -417,6 +417,16 @@
               <FileType>1</FileType>
               <FilePath>..\User\stm32f4xx_it.c</FilePath>
             </File>
+            <File>
+              <FileName>ringbuffer.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\User\ringbuffer.c</FilePath>
+            </File>
+            <File>
+              <FileName>commands.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\User\commands.c</FilePath>
+            </File>
           </Files>
         </Group>
         <Group>
@@ -676,6 +686,26 @@
               <FileName>uart.c</FileName>
               <FileType>1</FileType>
               <FilePath>..\BaseDrive\uart.c</FilePath>
+            </File>
+            <File>
+              <FileName>SysTick.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\BaseDrive\SysTick.c</FilePath>
+            </File>
+            <File>
+              <FileName>sccb_bus.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\BaseDrive\sccb_bus.c</FilePath>
+            </File>
+            <File>
+              <FileName>ov7670.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\BaseDrive\ov7670.c</FilePath>
+            </File>
+            <File>
+              <FileName>lcd.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\BaseDrive\lcd.c</FilePath>
             </File>
           </Files>
         </Group>
