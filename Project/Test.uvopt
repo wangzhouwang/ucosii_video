@@ -270,7 +270,7 @@
       <Focus>0</Focus>
       <ColumnNumber>0</ColumnNumber>
       <tvExpOptDlg>0</tvExpOptDlg>
-      <TopLine>169</TopLine>
+      <TopLine>170</TopLine>
       <CurrentLine>175</CurrentLine>
       <bDave2>0</bDave2>
       <PathWithFileName>..\Libraries\CMSIS\Device\ST\STM32F4xx\Source\Templates\arm\startup_stm32f4xx.s</PathWithFileName>
@@ -294,7 +294,7 @@
       <Focus>0</Focus>
       <ColumnNumber>0</ColumnNumber>
       <tvExpOptDlg>0</tvExpOptDlg>
-      <TopLine>93</TopLine>
+      <TopLine>94</TopLine>
       <CurrentLine>99</CurrentLine>
       <bDave2>0</bDave2>
       <PathWithFileName>..\User\main.c</PathWithFileName>
@@ -326,7 +326,7 @@
       <Focus>0</Focus>
       <ColumnNumber>0</ColumnNumber>
       <tvExpOptDlg>0</tvExpOptDlg>
-      <TopLine>298</TopLine>
+      <TopLine>299</TopLine>
       <CurrentLine>310</CurrentLine>
       <bDave2>0</bDave2>
       <PathWithFileName>..\User\ringbuffer.c</PathWithFileName>
@@ -356,10 +356,10 @@
       <FileType>1</FileType>
       <tvExp>0</tvExp>
       <Focus>0</Focus>
-      <ColumnNumber>17</ColumnNumber>
+      <ColumnNumber>0</ColumnNumber>
       <tvExpOptDlg>0</tvExpOptDlg>
-      <TopLine>11</TopLine>
-      <CurrentLine>29</CurrentLine>
+      <TopLine>16</TopLine>
+      <CurrentLine>30</CurrentLine>
       <bDave2>0</bDave2>
       <PathWithFileName>..\User\camera.c</PathWithFileName>
       <FilenameWithoutPath>camera.c</FilenameWithoutPath>
@@ -1078,7 +1078,7 @@
       <Focus>0</Focus>
       <ColumnNumber>0</ColumnNumber>
       <tvExpOptDlg>0</tvExpOptDlg>
-      <TopLine>210</TopLine>
+      <TopLine>211</TopLine>
       <CurrentLine>216</CurrentLine>
       <bDave2>0</bDave2>
       <PathWithFileName>..\Ucosii\Src\os_task.c</PathWithFileName>
@@ -1180,10 +1180,10 @@
       <FileType>1</FileType>
       <tvExp>0</tvExp>
       <Focus>0</Focus>
-      <ColumnNumber>0</ColumnNumber>
+      <ColumnNumber>80</ColumnNumber>
       <tvExpOptDlg>0</tvExpOptDlg>
       <TopLine>1</TopLine>
-      <CurrentLine>1</CurrentLine>
+      <CurrentLine>19</CurrentLine>
       <bDave2>0</bDave2>
       <PathWithFileName>..\BaseDrive\sccb_bus.c</PathWithFileName>
       <FilenameWithoutPath>sccb_bus.c</FilenameWithoutPath>

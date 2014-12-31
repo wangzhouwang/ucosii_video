@@ -35,7 +35,8 @@ I (D:\Code\ucosii_video\Libraries\STM32F4xx_StdPeriph_Driver\inc\stm32f4xx_usart
 I (D:\Code\ucosii_video\Libraries\STM32F4xx_StdPeriph_Driver\inc\stm32f4xx_wwdg.h)(0x4EC0F5EC)
 I (D:\Code\ucosii_video\Libraries\STM32F4xx_StdPeriph_Driver\inc\misc.h)(0x4EC0F5EA)
 F (..\Libraries\CMSIS\Device\ST\STM32F4xx\Source\Templates\arm\startup_stm32f4xx.s)(0x4EC0F5E8)(--cpu Cortex-M4 -g --apcs=interwork --pd "__MICROLIB SETA 1"-I F:\software_and_user\mdk4.7\ARM\RV31\INC-I F:\software_and_user\mdk4.7\ARM\CMSIS\Include-I F:\software_and_user\mdk4.7\ARM\Inc\ST\STM32F4xx--list .\list\startup_stm32f4xx.lst --xref -o .\obj\startup_stm32f4xx.o --depend .\obj\startup_stm32f4xx.d)
-F (..\User\main.c)(0x549F6A57)(-c --cpu Cortex-M4 -D__MICROLIB -g -O0 --apcs=interwork --split_sections -I..\Libraries\CMSIS\Device\ST\STM32F4xx\Include -I..\User -I..\Libraries\STM32F4xx_StdPeriph_Driver\inc -I..\Ucosii\Include -I..\Ucosii\Port -I..\Ucosii\Src -I..\BaseDrive-I F:\software_and_user\mdk4.7\ARM\RV31\INC-I F:\software_and_user\mdk4.7\ARM\CMSIS\Include-I F:\software_and_user\mdk4.7\ARM\Inc\ST\STM32F4xx-DSTM32F4XX -DUSE_STDPERIPH_DRIVER -o .\obj\main.o --omf_browse .\obj\main.crf --depend .\obj\main.d)
+F (..\User\main.c)(0x54A0063E)(-c --cpu Cortex-M4 -D__MICROLIB -g -O0 --apcs=interwork --split_sections -I..\Libraries\CMSIS\Device\ST\STM32F4xx\Include -I..\User -I..\Libraries\STM32F4xx_StdPeriph_Driver\inc -I..\Ucosii\Include -I..\Ucosii\Port -I..\Ucosii\Src -I..\BaseDrive-I F:\software_and_user\mdk4.7\ARM\RV31\INC-I F:\software_and_user\mdk4.7\ARM\CMSIS\Include-I F:\software_and_user\mdk4.7\ARM\Inc\ST\STM32F4xx-DSTM32F4XX -DUSE_STDPERIPH_DRIVER -o .\obj\main.o --omf_browse .\obj\main.crf --depend .\obj\main.d)
+I (D:\Code\ucosii_video\User\appcommon.h)(0x54A0066D)
 I (D:\Code\ucosii_video\Libraries\CMSIS\Device\ST\STM32F4xx\Include\stm32f4xx.h)(0x4EC0F5E8)
 I (F:\software_and_user\mdk4.7\ARM\CMSIS\Include\core_cm4.h)(0x51C7B54A)
 I (F:\software_and_user\mdk4.7\ARM\ARMCC\include\stdint.h)(0x51C7B744)
@@ -72,11 +73,17 @@ I (D:\Code\ucosii_video\Libraries\STM32F4xx_StdPeriph_Driver\inc\stm32f4xx_wwdg.
 I (D:\Code\ucosii_video\Libraries\STM32F4xx_StdPeriph_Driver\inc\misc.h)(0x4EC0F5EA)
 I (D:\Code\ucosii_video\Ucosii\Src\ucos_ii.h)(0x48893FC2)
 I (D:\Code\ucosii_video\Ucosii\Include\app_cfg.h)(0x50C59590)
-I (D:\Code\ucosii_video\Ucosii\Include\os_cfg.h)(0x50C6E0AA)
+I (D:\Code\ucosii_video\Ucosii\Include\os_cfg.h)(0x549FF9AE)
 I (D:\Code\ucosii_video\Ucosii\Port\os_cpu.h)(0x50C6B314)
 I (F:\software_and_user\mdk4.7\ARM\ARMCC\include\stdio.h)(0x51C7B744)
 I (D:\Code\ucosii_video\BaseDrive\Gpio.h)(0x50E63057)
-I (D:\Code\ucosii_video\BaseDrive\uart.h)(0x549F6EFA)
+I (D:\Code\ucosii_video\BaseDrive\uart.h)(0x54A00635)
+I (D:\Code\ucosii_video\BaseDrive\ov7670.h)(0x50F02A08)
+I (D:\Code\ucosii_video\BaseDrive\sccb_bus.h)(0x50F012D0)
+I (D:\Code\ucosii_video\BaseDrive\lcd.h)(0x549F78B4)
+I (D:\Code\ucosii_video\User\commands.h)(0x549FD751)
+I (F:\software_and_user\mdk4.7\ARM\ARMCC\include\string.h)(0x51C7B744)
+I (D:\Code\ucosii_video\User\camera.h)(0x549FEB8E)
 F (..\User\stm32f4xx_it.c)(0x549F6166)(-c --cpu Cortex-M4 -D__MICROLIB -g -O0 --apcs=interwork --split_sections -I..\Libraries\CMSIS\Device\ST\STM32F4xx\Include -I..\User -I..\Libraries\STM32F4xx_StdPeriph_Driver\inc -I..\Ucosii\Include -I..\Ucosii\Port -I..\Ucosii\Src -I..\BaseDrive-I F:\software_and_user\mdk4.7\ARM\RV31\INC-I F:\software_and_user\mdk4.7\ARM\CMSIS\Include-I F:\software_and_user\mdk4.7\ARM\Inc\ST\STM32F4xx-DSTM32F4XX -DUSE_STDPERIPH_DRIVER -o .\obj\stm32f4xx_it.o --omf_browse .\obj\stm32f4xx_it.crf --depend .\obj\stm32f4xx_it.d)
 I (D:\Code\ucosii_video\User\stm32f4xx_it.h)(0x4F87862A)
 I (D:\Code\ucosii_video\Libraries\CMSIS\Device\ST\STM32F4xx\Include\stm32f4xx.h)(0x4EC0F5E8)
@@ -115,18 +122,20 @@ I (D:\Code\ucosii_video\Libraries\STM32F4xx_StdPeriph_Driver\inc\stm32f4xx_wwdg.
 I (D:\Code\ucosii_video\Libraries\STM32F4xx_StdPeriph_Driver\inc\misc.h)(0x4EC0F5EA)
 I (D:\Code\ucosii_video\Ucosii\Src\ucos_ii.h)(0x48893FC2)
 I (D:\Code\ucosii_video\Ucosii\Include\app_cfg.h)(0x50C59590)
-I (D:\Code\ucosii_video\Ucosii\Include\os_cfg.h)(0x50C6E0AA)
+I (D:\Code\ucosii_video\Ucosii\Include\os_cfg.h)(0x549FF9AE)
 I (D:\Code\ucosii_video\Ucosii\Port\os_cpu.h)(0x50C6B314)
 F (..\User\ringbuffer.c)(0x549F61D2)(-c --cpu Cortex-M4 -D__MICROLIB -g -O0 --apcs=interwork --split_sections -I..\Libraries\CMSIS\Device\ST\STM32F4xx\Include -I..\User -I..\Libraries\STM32F4xx_StdPeriph_Driver\inc -I..\Ucosii\Include -I..\Ucosii\Port -I..\Ucosii\Src -I..\BaseDrive-I F:\software_and_user\mdk4.7\ARM\RV31\INC-I F:\software_and_user\mdk4.7\ARM\CMSIS\Include-I F:\software_and_user\mdk4.7\ARM\Inc\ST\STM32F4xx-DSTM32F4XX -DUSE_STDPERIPH_DRIVER -o .\obj\ringbuffer.o --omf_browse .\obj\ringbuffer.crf --depend .\obj\ringbuffer.d)
 I (D:\Code\ucosii_video\User\ringbuffer.h)(0x549F61D4)
 I (F:\software_and_user\mdk4.7\ARM\ARMCC\include\string.h)(0x51C7B744)
-F (..\User\commands.c)(0x549F771C)(-c --cpu Cortex-M4 -D__MICROLIB -g -O0 --apcs=interwork --split_sections -I..\Libraries\CMSIS\Device\ST\STM32F4xx\Include -I..\User -I..\Libraries\STM32F4xx_StdPeriph_Driver\inc -I..\Ucosii\Include -I..\Ucosii\Port -I..\Ucosii\Src -I..\BaseDrive-I F:\software_and_user\mdk4.7\ARM\RV31\INC-I F:\software_and_user\mdk4.7\ARM\CMSIS\Include-I F:\software_and_user\mdk4.7\ARM\Inc\ST\STM32F4xx-DSTM32F4XX -DUSE_STDPERIPH_DRIVER -o .\obj\commands.o --omf_browse .\obj\commands.crf --depend .\obj\commands.d)
-I (D:\Code\ucosii_video\User\commands.h)(0x549F69F8)
+F (..\User\commands.c)(0x549FF493)(-c --cpu Cortex-M4 -D__MICROLIB -g -O0 --apcs=interwork --split_sections -I..\Libraries\CMSIS\Device\ST\STM32F4xx\Include -I..\User -I..\Libraries\STM32F4xx_StdPeriph_Driver\inc -I..\Ucosii\Include -I..\Ucosii\Port -I..\Ucosii\Src -I..\BaseDrive-I F:\software_and_user\mdk4.7\ARM\RV31\INC-I F:\software_and_user\mdk4.7\ARM\CMSIS\Include-I F:\software_and_user\mdk4.7\ARM\Inc\ST\STM32F4xx-DSTM32F4XX -DUSE_STDPERIPH_DRIVER -o .\obj\commands.o --omf_browse .\obj\commands.crf --depend .\obj\commands.d)
+I (D:\Code\ucosii_video\User\commands.h)(0x549FD751)
 I (D:\Code\ucosii_video\Ucosii\Src\ucos_ii.h)(0x48893FC2)
 I (D:\Code\ucosii_video\Ucosii\Include\app_cfg.h)(0x50C59590)
-I (D:\Code\ucosii_video\Ucosii\Include\os_cfg.h)(0x50C6E0AA)
+I (D:\Code\ucosii_video\Ucosii\Include\os_cfg.h)(0x549FF9AE)
 I (D:\Code\ucosii_video\Ucosii\Port\os_cpu.h)(0x50C6B314)
-I (D:\Code\ucosii_video\BaseDrive\uart.h)(0x549F6EFA)
+I (F:\software_and_user\mdk4.7\ARM\ARMCC\include\stdio.h)(0x51C7B744)
+I (F:\software_and_user\mdk4.7\ARM\ARMCC\include\string.h)(0x51C7B744)
+I (D:\Code\ucosii_video\BaseDrive\uart.h)(0x54A00635)
 I (D:\Code\ucosii_video\Libraries\CMSIS\Device\ST\STM32F4xx\Include\stm32f4xx.h)(0x4EC0F5E8)
 I (F:\software_and_user\mdk4.7\ARM\CMSIS\Include\core_cm4.h)(0x51C7B54A)
 I (F:\software_and_user\mdk4.7\ARM\ARMCC\include\stdint.h)(0x51C7B744)
@@ -161,6 +170,61 @@ I (D:\Code\ucosii_video\Libraries\STM32F4xx_StdPeriph_Driver\inc\stm32f4xx_tim.h
 I (D:\Code\ucosii_video\Libraries\STM32F4xx_StdPeriph_Driver\inc\stm32f4xx_usart.h)(0x4EC0F5EC)
 I (D:\Code\ucosii_video\Libraries\STM32F4xx_StdPeriph_Driver\inc\stm32f4xx_wwdg.h)(0x4EC0F5EC)
 I (D:\Code\ucosii_video\Libraries\STM32F4xx_StdPeriph_Driver\inc\misc.h)(0x4EC0F5EA)
+I (D:\Code\ucosii_video\User\appcommon.h)(0x54A0066D)
+I (D:\Code\ucosii_video\BaseDrive\Gpio.h)(0x50E63057)
+I (D:\Code\ucosii_video\BaseDrive\ov7670.h)(0x50F02A08)
+I (D:\Code\ucosii_video\BaseDrive\sccb_bus.h)(0x50F012D0)
+I (D:\Code\ucosii_video\BaseDrive\lcd.h)(0x549F78B4)
+I (D:\Code\ucosii_video\User\camera.h)(0x549FEB8E)
+F (..\User\camera.c)(0x549FF4C0)(-c --cpu Cortex-M4 -D__MICROLIB -g -O0 --apcs=interwork --split_sections -I..\Libraries\CMSIS\Device\ST\STM32F4xx\Include -I..\User -I..\Libraries\STM32F4xx_StdPeriph_Driver\inc -I..\Ucosii\Include -I..\Ucosii\Port -I..\Ucosii\Src -I..\BaseDrive-I F:\software_and_user\mdk4.7\ARM\RV31\INC-I F:\software_and_user\mdk4.7\ARM\CMSIS\Include-I F:\software_and_user\mdk4.7\ARM\Inc\ST\STM32F4xx-DSTM32F4XX -DUSE_STDPERIPH_DRIVER -o .\obj\camera.o --omf_browse .\obj\camera.crf --depend .\obj\camera.d)
+I (D:\Code\ucosii_video\User\appcommon.h)(0x54A0066D)
+I (D:\Code\ucosii_video\Libraries\CMSIS\Device\ST\STM32F4xx\Include\stm32f4xx.h)(0x4EC0F5E8)
+I (F:\software_and_user\mdk4.7\ARM\CMSIS\Include\core_cm4.h)(0x51C7B54A)
+I (F:\software_and_user\mdk4.7\ARM\ARMCC\include\stdint.h)(0x51C7B744)
+I (F:\software_and_user\mdk4.7\ARM\CMSIS\Include\core_cmInstr.h)(0x51C7B54A)
+I (F:\software_and_user\mdk4.7\ARM\CMSIS\Include\core_cmFunc.h)(0x51C7B54A)
+I (F:\software_and_user\mdk4.7\ARM\CMSIS\Include\core_cm4_simd.h)(0x51C7B54A)
+I (D:\Code\ucosii_video\Libraries\CMSIS\Device\ST\STM32F4xx\Include\system_stm32f4xx.h)(0x4EC0F5E8)
+I (D:\Code\ucosii_video\User\stm32f4xx_conf.h)(0x4E89A172)
+I (D:\Code\ucosii_video\Libraries\STM32F4xx_StdPeriph_Driver\inc\stm32f4xx_adc.h)(0x4EC0F5EA)
+I (D:\Code\ucosii_video\Libraries\STM32F4xx_StdPeriph_Driver\inc\stm32f4xx_can.h)(0x4EC0F5EA)
+I (D:\Code\ucosii_video\Libraries\STM32F4xx_StdPeriph_Driver\inc\stm32f4xx_crc.h)(0x4EC0F5EA)
+I (D:\Code\ucosii_video\Libraries\STM32F4xx_StdPeriph_Driver\inc\stm32f4xx_cryp.h)(0x4EC0F5EA)
+I (D:\Code\ucosii_video\Libraries\STM32F4xx_StdPeriph_Driver\inc\stm32f4xx_dac.h)(0x4EC0F5EA)
+I (D:\Code\ucosii_video\Libraries\STM32F4xx_StdPeriph_Driver\inc\stm32f4xx_dbgmcu.h)(0x4EC0F5EA)
+I (D:\Code\ucosii_video\Libraries\STM32F4xx_StdPeriph_Driver\inc\stm32f4xx_dcmi.h)(0x4EC0F5EA)
+I (D:\Code\ucosii_video\Libraries\STM32F4xx_StdPeriph_Driver\inc\stm32f4xx_dma.h)(0x4EC0F5EA)
+I (D:\Code\ucosii_video\Libraries\STM32F4xx_StdPeriph_Driver\inc\stm32f4xx_exti.h)(0x4EC0F5EC)
+I (D:\Code\ucosii_video\Libraries\STM32F4xx_StdPeriph_Driver\inc\stm32f4xx_flash.h)(0x4EC0F5EC)
+I (D:\Code\ucosii_video\Libraries\STM32F4xx_StdPeriph_Driver\inc\stm32f4xx_fsmc.h)(0x4EC0F5EC)
+I (D:\Code\ucosii_video\Libraries\STM32F4xx_StdPeriph_Driver\inc\stm32f4xx_hash.h)(0x4EC0F5EC)
+I (D:\Code\ucosii_video\Libraries\STM32F4xx_StdPeriph_Driver\inc\stm32f4xx_gpio.h)(0x4EC0F5EC)
+I (D:\Code\ucosii_video\Libraries\STM32F4xx_StdPeriph_Driver\inc\stm32f4xx_i2c.h)(0x4EC0F5EC)
+I (D:\Code\ucosii_video\Libraries\STM32F4xx_StdPeriph_Driver\inc\stm32f4xx_iwdg.h)(0x4EC0F5EC)
+I (D:\Code\ucosii_video\Libraries\STM32F4xx_StdPeriph_Driver\inc\stm32f4xx_pwr.h)(0x4EC0F5EC)
+I (D:\Code\ucosii_video\Libraries\STM32F4xx_StdPeriph_Driver\inc\stm32f4xx_rcc.h)(0x4EC0F5EC)
+I (D:\Code\ucosii_video\Libraries\STM32F4xx_StdPeriph_Driver\inc\stm32f4xx_rng.h)(0x4EC0F5EC)
+I (D:\Code\ucosii_video\Libraries\STM32F4xx_StdPeriph_Driver\inc\stm32f4xx_rtc.h)(0x4EC0F5EC)
+I (D:\Code\ucosii_video\Libraries\STM32F4xx_StdPeriph_Driver\inc\stm32f4xx_sdio.h)(0x4EC0F5EC)
+I (D:\Code\ucosii_video\Libraries\STM32F4xx_StdPeriph_Driver\inc\stm32f4xx_spi.h)(0x4EC0F5EC)
+I (D:\Code\ucosii_video\Libraries\STM32F4xx_StdPeriph_Driver\inc\stm32f4xx_syscfg.h)(0x4EC0F5EC)
+I (D:\Code\ucosii_video\Libraries\STM32F4xx_StdPeriph_Driver\inc\stm32f4xx_tim.h)(0x4EC0F5EC)
+I (D:\Code\ucosii_video\Libraries\STM32F4xx_StdPeriph_Driver\inc\stm32f4xx_usart.h)(0x4EC0F5EC)
+I (D:\Code\ucosii_video\Libraries\STM32F4xx_StdPeriph_Driver\inc\stm32f4xx_wwdg.h)(0x4EC0F5EC)
+I (D:\Code\ucosii_video\Libraries\STM32F4xx_StdPeriph_Driver\inc\misc.h)(0x4EC0F5EA)
+I (D:\Code\ucosii_video\Ucosii\Src\ucos_ii.h)(0x48893FC2)
+I (D:\Code\ucosii_video\Ucosii\Include\app_cfg.h)(0x50C59590)
+I (D:\Code\ucosii_video\Ucosii\Include\os_cfg.h)(0x549FF9AE)
+I (D:\Code\ucosii_video\Ucosii\Port\os_cpu.h)(0x50C6B314)
+I (F:\software_and_user\mdk4.7\ARM\ARMCC\include\stdio.h)(0x51C7B744)
+I (D:\Code\ucosii_video\BaseDrive\Gpio.h)(0x50E63057)
+I (D:\Code\ucosii_video\BaseDrive\uart.h)(0x54A00635)
+I (D:\Code\ucosii_video\BaseDrive\ov7670.h)(0x50F02A08)
+I (D:\Code\ucosii_video\BaseDrive\sccb_bus.h)(0x50F012D0)
+I (D:\Code\ucosii_video\BaseDrive\lcd.h)(0x549F78B4)
+I (D:\Code\ucosii_video\User\commands.h)(0x549FD751)
+I (F:\software_and_user\mdk4.7\ARM\ARMCC\include\string.h)(0x51C7B744)
+I (D:\Code\ucosii_video\User\camera.h)(0x549FEB8E)
 F (..\Libraries\STM32F4xx_StdPeriph_Driver\src\misc.c)(0x4EC0F5EC)(-c --cpu Cortex-M4 -D__MICROLIB -g -O0 --apcs=interwork --split_sections -I..\Libraries\CMSIS\Device\ST\STM32F4xx\Include -I..\User -I..\Libraries\STM32F4xx_StdPeriph_Driver\inc -I..\Ucosii\Include -I..\Ucosii\Port -I..\Ucosii\Src -I..\BaseDrive-I F:\software_and_user\mdk4.7\ARM\RV31\INC-I F:\software_and_user\mdk4.7\ARM\CMSIS\Include-I F:\software_and_user\mdk4.7\ARM\Inc\ST\STM32F4xx-DSTM32F4XX -DUSE_STDPERIPH_DRIVER -o .\obj\misc.o --omf_browse .\obj\misc.crf --depend .\obj\misc.d)
 I (D:\Code\ucosii_video\Libraries\STM32F4xx_StdPeriph_Driver\inc\misc.h)(0x4EC0F5EA)
 I (D:\Code\ucosii_video\Libraries\CMSIS\Device\ST\STM32F4xx\Include\stm32f4xx.h)(0x4EC0F5E8)
@@ -1250,63 +1314,63 @@ F (..\Doc\ReadMe.txt)(0x50DD09F5)()
 F (..\Ucosii\Port\os_cpu_c.c)(0x50D2BAE6)(-c --cpu Cortex-M4 -D__MICROLIB -g -O0 --apcs=interwork --split_sections -I..\Libraries\CMSIS\Device\ST\STM32F4xx\Include -I..\User -I..\Libraries\STM32F4xx_StdPeriph_Driver\inc -I..\Ucosii\Include -I..\Ucosii\Port -I..\Ucosii\Src -I..\BaseDrive-I F:\software_and_user\mdk4.7\ARM\RV31\INC-I F:\software_and_user\mdk4.7\ARM\CMSIS\Include-I F:\software_and_user\mdk4.7\ARM\Inc\ST\STM32F4xx-DSTM32F4XX -DUSE_STDPERIPH_DRIVER -o .\obj\os_cpu_c.o --omf_browse .\obj\os_cpu_c.crf --depend .\obj\os_cpu_c.d)
 I (D:\Code\ucosii_video\Ucosii\Src\ucos_ii.h)(0x48893FC2)
 I (D:\Code\ucosii_video\Ucosii\Include\app_cfg.h)(0x50C59590)
-I (D:\Code\ucosii_video\Ucosii\Include\os_cfg.h)(0x50C6E0AA)
+I (D:\Code\ucosii_video\Ucosii\Include\os_cfg.h)(0x549FF9AE)
 I (D:\Code\ucosii_video\Ucosii\Port\os_cpu.h)(0x50C6B314)
 F (..\Ucosii\Port\os_dbg.c)(0x483F2546)(-c --cpu Cortex-M4 -D__MICROLIB -g -O0 --apcs=interwork --split_sections -I..\Libraries\CMSIS\Device\ST\STM32F4xx\Include -I..\User -I..\Libraries\STM32F4xx_StdPeriph_Driver\inc -I..\Ucosii\Include -I..\Ucosii\Port -I..\Ucosii\Src -I..\BaseDrive-I F:\software_and_user\mdk4.7\ARM\RV31\INC-I F:\software_and_user\mdk4.7\ARM\CMSIS\Include-I F:\software_and_user\mdk4.7\ARM\Inc\ST\STM32F4xx-DSTM32F4XX -DUSE_STDPERIPH_DRIVER -o .\obj\os_dbg.o --omf_browse .\obj\os_dbg.crf --depend .\obj\os_dbg.d)
 I (D:\Code\ucosii_video\Ucosii\Src\ucos_ii.h)(0x48893FC2)
 I (D:\Code\ucosii_video\Ucosii\Include\app_cfg.h)(0x50C59590)
-I (D:\Code\ucosii_video\Ucosii\Include\os_cfg.h)(0x50C6E0AA)
+I (D:\Code\ucosii_video\Ucosii\Include\os_cfg.h)(0x549FF9AE)
 I (D:\Code\ucosii_video\Ucosii\Port\os_cpu.h)(0x50C6B314)
 F (..\Ucosii\Port\os_cpu_a.asm)(0x514432CC)(--cpu Cortex-M4 -g --apcs=interwork --pd "__MICROLIB SETA 1"-I F:\software_and_user\mdk4.7\ARM\RV31\INC-I F:\software_and_user\mdk4.7\ARM\CMSIS\Include-I F:\software_and_user\mdk4.7\ARM\Inc\ST\STM32F4xx--list .\list\os_cpu_a.lst --xref -o .\obj\os_cpu_a.o --depend .\obj\os_cpu_a.d)
-F (..\Ucosii\Src\os_core.c)(0x51430AF3)(-c --cpu Cortex-M4 -D__MICROLIB -g -O0 --apcs=interwork --split_sections -I..\Libraries\CMSIS\Device\ST\STM32F4xx\Include -I..\User -I..\Libraries\STM32F4xx_StdPeriph_Driver\inc -I..\Ucosii\Include -I..\Ucosii\Port -I..\Ucosii\Src -I..\BaseDrive-I F:\software_and_user\mdk4.7\ARM\RV31\INC-I F:\software_and_user\mdk4.7\ARM\CMSIS\Include-I F:\software_and_user\mdk4.7\ARM\Inc\ST\STM32F4xx-DSTM32F4XX -DUSE_STDPERIPH_DRIVER -o .\obj\os_core.o --omf_browse .\obj\os_core.crf --depend .\obj\os_core.d)
+F (..\Ucosii\Src\os_core.c)(0x549F7E8A)(-c --cpu Cortex-M4 -D__MICROLIB -g -O0 --apcs=interwork --split_sections -I..\Libraries\CMSIS\Device\ST\STM32F4xx\Include -I..\User -I..\Libraries\STM32F4xx_StdPeriph_Driver\inc -I..\Ucosii\Include -I..\Ucosii\Port -I..\Ucosii\Src -I..\BaseDrive-I F:\software_and_user\mdk4.7\ARM\RV31\INC-I F:\software_and_user\mdk4.7\ARM\CMSIS\Include-I F:\software_and_user\mdk4.7\ARM\Inc\ST\STM32F4xx-DSTM32F4XX -DUSE_STDPERIPH_DRIVER -o .\obj\os_core.o --omf_browse .\obj\os_core.crf --depend .\obj\os_core.d)
 I (D:\Code\ucosii_video\Ucosii\Src\ucos_ii.h)(0x48893FC2)
 I (D:\Code\ucosii_video\Ucosii\Include\app_cfg.h)(0x50C59590)
-I (D:\Code\ucosii_video\Ucosii\Include\os_cfg.h)(0x50C6E0AA)
+I (D:\Code\ucosii_video\Ucosii\Include\os_cfg.h)(0x549FF9AE)
 I (D:\Code\ucosii_video\Ucosii\Port\os_cpu.h)(0x50C6B314)
 F (..\Ucosii\Src\os_flag.c)(0x48893FC2)(-c --cpu Cortex-M4 -D__MICROLIB -g -O0 --apcs=interwork --split_sections -I..\Libraries\CMSIS\Device\ST\STM32F4xx\Include -I..\User -I..\Libraries\STM32F4xx_StdPeriph_Driver\inc -I..\Ucosii\Include -I..\Ucosii\Port -I..\Ucosii\Src -I..\BaseDrive-I F:\software_and_user\mdk4.7\ARM\RV31\INC-I F:\software_and_user\mdk4.7\ARM\CMSIS\Include-I F:\software_and_user\mdk4.7\ARM\Inc\ST\STM32F4xx-DSTM32F4XX -DUSE_STDPERIPH_DRIVER -o .\obj\os_flag.o --omf_browse .\obj\os_flag.crf --depend .\obj\os_flag.d)
 I (D:\Code\ucosii_video\Ucosii\Src\ucos_ii.h)(0x48893FC2)
 I (D:\Code\ucosii_video\Ucosii\Include\app_cfg.h)(0x50C59590)
-I (D:\Code\ucosii_video\Ucosii\Include\os_cfg.h)(0x50C6E0AA)
+I (D:\Code\ucosii_video\Ucosii\Include\os_cfg.h)(0x549FF9AE)
 I (D:\Code\ucosii_video\Ucosii\Port\os_cpu.h)(0x50C6B314)
 F (..\Ucosii\Src\os_mbox.c)(0x48893FC4)(-c --cpu Cortex-M4 -D__MICROLIB -g -O0 --apcs=interwork --split_sections -I..\Libraries\CMSIS\Device\ST\STM32F4xx\Include -I..\User -I..\Libraries\STM32F4xx_StdPeriph_Driver\inc -I..\Ucosii\Include -I..\Ucosii\Port -I..\Ucosii\Src -I..\BaseDrive-I F:\software_and_user\mdk4.7\ARM\RV31\INC-I F:\software_and_user\mdk4.7\ARM\CMSIS\Include-I F:\software_and_user\mdk4.7\ARM\Inc\ST\STM32F4xx-DSTM32F4XX -DUSE_STDPERIPH_DRIVER -o .\obj\os_mbox.o --omf_browse .\obj\os_mbox.crf --depend .\obj\os_mbox.d)
 I (D:\Code\ucosii_video\Ucosii\Src\ucos_ii.h)(0x48893FC2)
 I (D:\Code\ucosii_video\Ucosii\Include\app_cfg.h)(0x50C59590)
-I (D:\Code\ucosii_video\Ucosii\Include\os_cfg.h)(0x50C6E0AA)
+I (D:\Code\ucosii_video\Ucosii\Include\os_cfg.h)(0x549FF9AE)
 I (D:\Code\ucosii_video\Ucosii\Port\os_cpu.h)(0x50C6B314)
 F (..\Ucosii\Src\os_mem.c)(0x48893FC4)(-c --cpu Cortex-M4 -D__MICROLIB -g -O0 --apcs=interwork --split_sections -I..\Libraries\CMSIS\Device\ST\STM32F4xx\Include -I..\User -I..\Libraries\STM32F4xx_StdPeriph_Driver\inc -I..\Ucosii\Include -I..\Ucosii\Port -I..\Ucosii\Src -I..\BaseDrive-I F:\software_and_user\mdk4.7\ARM\RV31\INC-I F:\software_and_user\mdk4.7\ARM\CMSIS\Include-I F:\software_and_user\mdk4.7\ARM\Inc\ST\STM32F4xx-DSTM32F4XX -DUSE_STDPERIPH_DRIVER -o .\obj\os_mem.o --omf_browse .\obj\os_mem.crf --depend .\obj\os_mem.d)
 I (D:\Code\ucosii_video\Ucosii\Src\ucos_ii.h)(0x48893FC2)
 I (D:\Code\ucosii_video\Ucosii\Include\app_cfg.h)(0x50C59590)
-I (D:\Code\ucosii_video\Ucosii\Include\os_cfg.h)(0x50C6E0AA)
+I (D:\Code\ucosii_video\Ucosii\Include\os_cfg.h)(0x549FF9AE)
 I (D:\Code\ucosii_video\Ucosii\Port\os_cpu.h)(0x50C6B314)
 F (..\Ucosii\Src\os_mutex.c)(0x48893FC4)(-c --cpu Cortex-M4 -D__MICROLIB -g -O0 --apcs=interwork --split_sections -I..\Libraries\CMSIS\Device\ST\STM32F4xx\Include -I..\User -I..\Libraries\STM32F4xx_StdPeriph_Driver\inc -I..\Ucosii\Include -I..\Ucosii\Port -I..\Ucosii\Src -I..\BaseDrive-I F:\software_and_user\mdk4.7\ARM\RV31\INC-I F:\software_and_user\mdk4.7\ARM\CMSIS\Include-I F:\software_and_user\mdk4.7\ARM\Inc\ST\STM32F4xx-DSTM32F4XX -DUSE_STDPERIPH_DRIVER -o .\obj\os_mutex.o --omf_browse .\obj\os_mutex.crf --depend .\obj\os_mutex.d)
 I (D:\Code\ucosii_video\Ucosii\Src\ucos_ii.h)(0x48893FC2)
 I (D:\Code\ucosii_video\Ucosii\Include\app_cfg.h)(0x50C59590)
-I (D:\Code\ucosii_video\Ucosii\Include\os_cfg.h)(0x50C6E0AA)
+I (D:\Code\ucosii_video\Ucosii\Include\os_cfg.h)(0x549FF9AE)
 I (D:\Code\ucosii_video\Ucosii\Port\os_cpu.h)(0x50C6B314)
 F (..\Ucosii\Src\os_q.c)(0x48893FC2)(-c --cpu Cortex-M4 -D__MICROLIB -g -O0 --apcs=interwork --split_sections -I..\Libraries\CMSIS\Device\ST\STM32F4xx\Include -I..\User -I..\Libraries\STM32F4xx_StdPeriph_Driver\inc -I..\Ucosii\Include -I..\Ucosii\Port -I..\Ucosii\Src -I..\BaseDrive-I F:\software_and_user\mdk4.7\ARM\RV31\INC-I F:\software_and_user\mdk4.7\ARM\CMSIS\Include-I F:\software_and_user\mdk4.7\ARM\Inc\ST\STM32F4xx-DSTM32F4XX -DUSE_STDPERIPH_DRIVER -o .\obj\os_q.o --omf_browse .\obj\os_q.crf --depend .\obj\os_q.d)
 I (D:\Code\ucosii_video\Ucosii\Src\ucos_ii.h)(0x48893FC2)
 I (D:\Code\ucosii_video\Ucosii\Include\app_cfg.h)(0x50C59590)
-I (D:\Code\ucosii_video\Ucosii\Include\os_cfg.h)(0x50C6E0AA)
+I (D:\Code\ucosii_video\Ucosii\Include\os_cfg.h)(0x549FF9AE)
 I (D:\Code\ucosii_video\Ucosii\Port\os_cpu.h)(0x50C6B314)
 F (..\Ucosii\Src\os_sem.c)(0x48893FC2)(-c --cpu Cortex-M4 -D__MICROLIB -g -O0 --apcs=interwork --split_sections -I..\Libraries\CMSIS\Device\ST\STM32F4xx\Include -I..\User -I..\Libraries\STM32F4xx_StdPeriph_Driver\inc -I..\Ucosii\Include -I..\Ucosii\Port -I..\Ucosii\Src -I..\BaseDrive-I F:\software_and_user\mdk4.7\ARM\RV31\INC-I F:\software_and_user\mdk4.7\ARM\CMSIS\Include-I F:\software_and_user\mdk4.7\ARM\Inc\ST\STM32F4xx-DSTM32F4XX -DUSE_STDPERIPH_DRIVER -o .\obj\os_sem.o --omf_browse .\obj\os_sem.crf --depend .\obj\os_sem.d)
 I (D:\Code\ucosii_video\Ucosii\Src\ucos_ii.h)(0x48893FC2)
 I (D:\Code\ucosii_video\Ucosii\Include\app_cfg.h)(0x50C59590)
-I (D:\Code\ucosii_video\Ucosii\Include\os_cfg.h)(0x50C6E0AA)
+I (D:\Code\ucosii_video\Ucosii\Include\os_cfg.h)(0x549FF9AE)
 I (D:\Code\ucosii_video\Ucosii\Port\os_cpu.h)(0x50C6B314)
 F (..\Ucosii\Src\os_task.c)(0x48893FC2)(-c --cpu Cortex-M4 -D__MICROLIB -g -O0 --apcs=interwork --split_sections -I..\Libraries\CMSIS\Device\ST\STM32F4xx\Include -I..\User -I..\Libraries\STM32F4xx_StdPeriph_Driver\inc -I..\Ucosii\Include -I..\Ucosii\Port -I..\Ucosii\Src -I..\BaseDrive-I F:\software_and_user\mdk4.7\ARM\RV31\INC-I F:\software_and_user\mdk4.7\ARM\CMSIS\Include-I F:\software_and_user\mdk4.7\ARM\Inc\ST\STM32F4xx-DSTM32F4XX -DUSE_STDPERIPH_DRIVER -o .\obj\os_task.o --omf_browse .\obj\os_task.crf --depend .\obj\os_task.d)
 I (D:\Code\ucosii_video\Ucosii\Src\ucos_ii.h)(0x48893FC2)
 I (D:\Code\ucosii_video\Ucosii\Include\app_cfg.h)(0x50C59590)
-I (D:\Code\ucosii_video\Ucosii\Include\os_cfg.h)(0x50C6E0AA)
+I (D:\Code\ucosii_video\Ucosii\Include\os_cfg.h)(0x549FF9AE)
 I (D:\Code\ucosii_video\Ucosii\Port\os_cpu.h)(0x50C6B314)
 F (..\Ucosii\Src\os_time.c)(0x48893FC4)(-c --cpu Cortex-M4 -D__MICROLIB -g -O0 --apcs=interwork --split_sections -I..\Libraries\CMSIS\Device\ST\STM32F4xx\Include -I..\User -I..\Libraries\STM32F4xx_StdPeriph_Driver\inc -I..\Ucosii\Include -I..\Ucosii\Port -I..\Ucosii\Src -I..\BaseDrive-I F:\software_and_user\mdk4.7\ARM\RV31\INC-I F:\software_and_user\mdk4.7\ARM\CMSIS\Include-I F:\software_and_user\mdk4.7\ARM\Inc\ST\STM32F4xx-DSTM32F4XX -DUSE_STDPERIPH_DRIVER -o .\obj\os_time.o --omf_browse .\obj\os_time.crf --depend .\obj\os_time.d)
 I (D:\Code\ucosii_video\Ucosii\Src\ucos_ii.h)(0x48893FC2)
 I (D:\Code\ucosii_video\Ucosii\Include\app_cfg.h)(0x50C59590)
-I (D:\Code\ucosii_video\Ucosii\Include\os_cfg.h)(0x50C6E0AA)
+I (D:\Code\ucosii_video\Ucosii\Include\os_cfg.h)(0x549FF9AE)
 I (D:\Code\ucosii_video\Ucosii\Port\os_cpu.h)(0x50C6B314)
 F (..\Ucosii\Src\os_tmr.c)(0x48893FC2)(-c --cpu Cortex-M4 -D__MICROLIB -g -O0 --apcs=interwork --split_sections -I..\Libraries\CMSIS\Device\ST\STM32F4xx\Include -I..\User -I..\Libraries\STM32F4xx_StdPeriph_Driver\inc -I..\Ucosii\Include -I..\Ucosii\Port -I..\Ucosii\Src -I..\BaseDrive-I F:\software_and_user\mdk4.7\ARM\RV31\INC-I F:\software_and_user\mdk4.7\ARM\CMSIS\Include-I F:\software_and_user\mdk4.7\ARM\Inc\ST\STM32F4xx-DSTM32F4XX -DUSE_STDPERIPH_DRIVER -o .\obj\os_tmr.o --omf_browse .\obj\os_tmr.crf --depend .\obj\os_tmr.d)
 I (D:\Code\ucosii_video\Ucosii\Src\ucos_ii.h)(0x48893FC2)
 I (D:\Code\ucosii_video\Ucosii\Include\app_cfg.h)(0x50C59590)
-I (D:\Code\ucosii_video\Ucosii\Include\os_cfg.h)(0x50C6E0AA)
+I (D:\Code\ucosii_video\Ucosii\Include\os_cfg.h)(0x549FF9AE)
 I (D:\Code\ucosii_video\Ucosii\Port\os_cpu.h)(0x50C6B314)
 F (..\BaseDrive\Gpio.c)(0x51418F4E)(-c --cpu Cortex-M4 -D__MICROLIB -g -O0 --apcs=interwork --split_sections -I..\Libraries\CMSIS\Device\ST\STM32F4xx\Include -I..\User -I..\Libraries\STM32F4xx_StdPeriph_Driver\inc -I..\Ucosii\Include -I..\Ucosii\Port -I..\Ucosii\Src -I..\BaseDrive-I F:\software_and_user\mdk4.7\ARM\RV31\INC-I F:\software_and_user\mdk4.7\ARM\CMSIS\Include-I F:\software_and_user\mdk4.7\ARM\Inc\ST\STM32F4xx-DSTM32F4XX -DUSE_STDPERIPH_DRIVER -o .\obj\gpio.o --omf_browse .\obj\gpio.crf --depend .\obj\gpio.d)
 I (D:\Code\ucosii_video\Libraries\CMSIS\Device\ST\STM32F4xx\Include\stm32f4xx.h)(0x4EC0F5E8)
@@ -1344,8 +1408,8 @@ I (D:\Code\ucosii_video\Libraries\STM32F4xx_StdPeriph_Driver\inc\stm32f4xx_usart
 I (D:\Code\ucosii_video\Libraries\STM32F4xx_StdPeriph_Driver\inc\stm32f4xx_wwdg.h)(0x4EC0F5EC)
 I (D:\Code\ucosii_video\Libraries\STM32F4xx_StdPeriph_Driver\inc\misc.h)(0x4EC0F5EA)
 I (D:\Code\ucosii_video\BaseDrive\Gpio.h)(0x50E63057)
-F (..\BaseDrive\uart.c)(0x549F6EEB)(-c --cpu Cortex-M4 -D__MICROLIB -g -O0 --apcs=interwork --split_sections -I..\Libraries\CMSIS\Device\ST\STM32F4xx\Include -I..\User -I..\Libraries\STM32F4xx_StdPeriph_Driver\inc -I..\Ucosii\Include -I..\Ucosii\Port -I..\Ucosii\Src -I..\BaseDrive-I F:\software_and_user\mdk4.7\ARM\RV31\INC-I F:\software_and_user\mdk4.7\ARM\CMSIS\Include-I F:\software_and_user\mdk4.7\ARM\Inc\ST\STM32F4xx-DSTM32F4XX -DUSE_STDPERIPH_DRIVER -o .\obj\uart.o --omf_browse .\obj\uart.crf --depend .\obj\uart.d)
-I (D:\Code\ucosii_video\BaseDrive\uart.h)(0x549F6EFA)
+F (..\BaseDrive\uart.c)(0x549F7E8B)(-c --cpu Cortex-M4 -D__MICROLIB -g -O0 --apcs=interwork --split_sections -I..\Libraries\CMSIS\Device\ST\STM32F4xx\Include -I..\User -I..\Libraries\STM32F4xx_StdPeriph_Driver\inc -I..\Ucosii\Include -I..\Ucosii\Port -I..\Ucosii\Src -I..\BaseDrive-I F:\software_and_user\mdk4.7\ARM\RV31\INC-I F:\software_and_user\mdk4.7\ARM\CMSIS\Include-I F:\software_and_user\mdk4.7\ARM\Inc\ST\STM32F4xx-DSTM32F4XX -DUSE_STDPERIPH_DRIVER -o .\obj\uart.o --omf_browse .\obj\uart.crf --depend .\obj\uart.d)
+I (D:\Code\ucosii_video\BaseDrive\uart.h)(0x54A00635)
 I (D:\Code\ucosii_video\Libraries\CMSIS\Device\ST\STM32F4xx\Include\stm32f4xx.h)(0x4EC0F5E8)
 I (F:\software_and_user\mdk4.7\ARM\CMSIS\Include\core_cm4.h)(0x51C7B54A)
 I (F:\software_and_user\mdk4.7\ARM\ARMCC\include\stdint.h)(0x51C7B744)
@@ -1380,11 +1444,19 @@ I (D:\Code\ucosii_video\Libraries\STM32F4xx_StdPeriph_Driver\inc\stm32f4xx_tim.h
 I (D:\Code\ucosii_video\Libraries\STM32F4xx_StdPeriph_Driver\inc\stm32f4xx_usart.h)(0x4EC0F5EC)
 I (D:\Code\ucosii_video\Libraries\STM32F4xx_StdPeriph_Driver\inc\stm32f4xx_wwdg.h)(0x4EC0F5EC)
 I (D:\Code\ucosii_video\Libraries\STM32F4xx_StdPeriph_Driver\inc\misc.h)(0x4EC0F5EA)
+I (D:\Code\ucosii_video\User\appcommon.h)(0x54A0066D)
 I (D:\Code\ucosii_video\Ucosii\Src\ucos_ii.h)(0x48893FC2)
 I (D:\Code\ucosii_video\Ucosii\Include\app_cfg.h)(0x50C59590)
-I (D:\Code\ucosii_video\Ucosii\Include\os_cfg.h)(0x50C6E0AA)
+I (D:\Code\ucosii_video\Ucosii\Include\os_cfg.h)(0x549FF9AE)
 I (D:\Code\ucosii_video\Ucosii\Port\os_cpu.h)(0x50C6B314)
 I (F:\software_and_user\mdk4.7\ARM\ARMCC\include\stdio.h)(0x51C7B744)
+I (D:\Code\ucosii_video\BaseDrive\Gpio.h)(0x50E63057)
+I (D:\Code\ucosii_video\BaseDrive\ov7670.h)(0x50F02A08)
+I (D:\Code\ucosii_video\BaseDrive\sccb_bus.h)(0x50F012D0)
+I (D:\Code\ucosii_video\BaseDrive\lcd.h)(0x549F78B4)
+I (D:\Code\ucosii_video\User\commands.h)(0x549FD751)
+I (F:\software_and_user\mdk4.7\ARM\ARMCC\include\string.h)(0x51C7B744)
+I (D:\Code\ucosii_video\User\camera.h)(0x549FEB8E)
 I (D:\Code\ucosii_video\User\ringbuffer.h)(0x549F61D4)
 F (..\BaseDrive\SysTick.c)(0x50E654B4)(-c --cpu Cortex-M4 -D__MICROLIB -g -O0 --apcs=interwork --split_sections -I..\Libraries\CMSIS\Device\ST\STM32F4xx\Include -I..\User -I..\Libraries\STM32F4xx_StdPeriph_Driver\inc -I..\Ucosii\Include -I..\Ucosii\Port -I..\Ucosii\Src -I..\BaseDrive-I F:\software_and_user\mdk4.7\ARM\RV31\INC-I F:\software_and_user\mdk4.7\ARM\CMSIS\Include-I F:\software_and_user\mdk4.7\ARM\Inc\ST\STM32F4xx-DSTM32F4XX -DUSE_STDPERIPH_DRIVER -o .\obj\systick.o --omf_browse .\obj\systick.crf --depend .\obj\systick.d)
 I (D:\Code\ucosii_video\Libraries\CMSIS\Device\ST\STM32F4xx\Include\stm32f4xx.h)(0x4EC0F5E8)
@@ -1422,7 +1494,7 @@ I (D:\Code\ucosii_video\Libraries\STM32F4xx_StdPeriph_Driver\inc\stm32f4xx_usart
 I (D:\Code\ucosii_video\Libraries\STM32F4xx_StdPeriph_Driver\inc\stm32f4xx_wwdg.h)(0x4EC0F5EC)
 I (D:\Code\ucosii_video\Libraries\STM32F4xx_StdPeriph_Driver\inc\misc.h)(0x4EC0F5EA)
 I (D:\Code\ucosii_video\BaseDrive\SysTick.h)(0x50E65211)
-F (..\BaseDrive\sccb_bus.c)(0x50F01372)(-c --cpu Cortex-M4 -D__MICROLIB -g -O0 --apcs=interwork --split_sections -I..\Libraries\CMSIS\Device\ST\STM32F4xx\Include -I..\User -I..\Libraries\STM32F4xx_StdPeriph_Driver\inc -I..\Ucosii\Include -I..\Ucosii\Port -I..\Ucosii\Src -I..\BaseDrive-I F:\software_and_user\mdk4.7\ARM\RV31\INC-I F:\software_and_user\mdk4.7\ARM\CMSIS\Include-I F:\software_and_user\mdk4.7\ARM\Inc\ST\STM32F4xx-DSTM32F4XX -DUSE_STDPERIPH_DRIVER -o .\obj\sccb_bus.o --omf_browse .\obj\sccb_bus.crf --depend .\obj\sccb_bus.d)
+F (..\BaseDrive\sccb_bus.c)(0x549FF83F)(-c --cpu Cortex-M4 -D__MICROLIB -g -O0 --apcs=interwork --split_sections -I..\Libraries\CMSIS\Device\ST\STM32F4xx\Include -I..\User -I..\Libraries\STM32F4xx_StdPeriph_Driver\inc -I..\Ucosii\Include -I..\Ucosii\Port -I..\Ucosii\Src -I..\BaseDrive-I F:\software_and_user\mdk4.7\ARM\RV31\INC-I F:\software_and_user\mdk4.7\ARM\CMSIS\Include-I F:\software_and_user\mdk4.7\ARM\Inc\ST\STM32F4xx-DSTM32F4XX -DUSE_STDPERIPH_DRIVER -o .\obj\sccb_bus.o --omf_browse .\obj\sccb_bus.crf --depend .\obj\sccb_bus.d)
 I (D:\Code\ucosii_video\BaseDrive\sccb_bus.h)(0x50F012D0)
 I (D:\Code\ucosii_video\Libraries\CMSIS\Device\ST\STM32F4xx\Include\stm32f4xx.h)(0x4EC0F5E8)
 I (F:\software_and_user\mdk4.7\ARM\CMSIS\Include\core_cm4.h)(0x51C7B54A)
@@ -1458,7 +1530,11 @@ I (D:\Code\ucosii_video\Libraries\STM32F4xx_StdPeriph_Driver\inc\stm32f4xx_tim.h
 I (D:\Code\ucosii_video\Libraries\STM32F4xx_StdPeriph_Driver\inc\stm32f4xx_usart.h)(0x4EC0F5EC)
 I (D:\Code\ucosii_video\Libraries\STM32F4xx_StdPeriph_Driver\inc\stm32f4xx_wwdg.h)(0x4EC0F5EC)
 I (D:\Code\ucosii_video\Libraries\STM32F4xx_StdPeriph_Driver\inc\misc.h)(0x4EC0F5EA)
-F (..\BaseDrive\ov7670.c)(0x517628AE)()
+I (D:\Code\ucosii_video\Ucosii\Src\ucos_ii.h)(0x48893FC2)
+I (D:\Code\ucosii_video\Ucosii\Include\app_cfg.h)(0x50C59590)
+I (D:\Code\ucosii_video\Ucosii\Include\os_cfg.h)(0x549FF9AE)
+I (D:\Code\ucosii_video\Ucosii\Port\os_cpu.h)(0x50C6B314)
+F (..\BaseDrive\ov7670.c)(0x54A00635)(-c --cpu Cortex-M4 -D__MICROLIB -g -O0 --apcs=interwork --split_sections -I..\Libraries\CMSIS\Device\ST\STM32F4xx\Include -I..\User -I..\Libraries\STM32F4xx_StdPeriph_Driver\inc -I..\Ucosii\Include -I..\Ucosii\Port -I..\Ucosii\Src -I..\BaseDrive-I F:\software_and_user\mdk4.7\ARM\RV31\INC-I F:\software_and_user\mdk4.7\ARM\CMSIS\Include-I F:\software_and_user\mdk4.7\ARM\Inc\ST\STM32F4xx-DSTM32F4XX -DUSE_STDPERIPH_DRIVER -o .\obj\ov7670.o --omf_browse .\obj\ov7670.crf --depend .\obj\ov7670.d)
 I (D:\Code\ucosii_video\BaseDrive\ov7670.h)(0x50F02A08)
 I (D:\Code\ucosii_video\Libraries\CMSIS\Device\ST\STM32F4xx\Include\stm32f4xx.h)(0x4EC0F5E8)
 I (F:\software_and_user\mdk4.7\ARM\CMSIS\Include\core_cm4.h)(0x51C7B54A)
@@ -1495,5 +1571,41 @@ I (D:\Code\ucosii_video\Libraries\STM32F4xx_StdPeriph_Driver\inc\stm32f4xx_usart
 I (D:\Code\ucosii_video\Libraries\STM32F4xx_StdPeriph_Driver\inc\stm32f4xx_wwdg.h)(0x4EC0F5EC)
 I (D:\Code\ucosii_video\Libraries\STM32F4xx_StdPeriph_Driver\inc\misc.h)(0x4EC0F5EA)
 I (D:\Code\ucosii_video\BaseDrive\sccb_bus.h)(0x50F012D0)
-I (D:\Code\ucosii_video\BaseDrive\lcd.h)(0x50F02266)
-F (..\BaseDrive\lcd.c)(0x5176283A)()
+I (D:\Code\ucosii_video\BaseDrive\lcd.h)(0x549F78B4)
+I (D:\Code\ucosii_video\BaseDrive\ov7670_table.h)(0x50F029F0)
+F (..\BaseDrive\lcd.c)(0x549FF624)(-c --cpu Cortex-M4 -D__MICROLIB -g -O0 --apcs=interwork --split_sections -I..\Libraries\CMSIS\Device\ST\STM32F4xx\Include -I..\User -I..\Libraries\STM32F4xx_StdPeriph_Driver\inc -I..\Ucosii\Include -I..\Ucosii\Port -I..\Ucosii\Src -I..\BaseDrive-I F:\software_and_user\mdk4.7\ARM\RV31\INC-I F:\software_and_user\mdk4.7\ARM\CMSIS\Include-I F:\software_and_user\mdk4.7\ARM\Inc\ST\STM32F4xx-DSTM32F4XX -DUSE_STDPERIPH_DRIVER -o .\obj\lcd.o --omf_browse .\obj\lcd.crf --depend .\obj\lcd.d)
+I (D:\Code\ucosii_video\BaseDrive\lcd.h)(0x549F78B4)
+I (D:\Code\ucosii_video\Libraries\CMSIS\Device\ST\STM32F4xx\Include\stm32f4xx.h)(0x4EC0F5E8)
+I (F:\software_and_user\mdk4.7\ARM\CMSIS\Include\core_cm4.h)(0x51C7B54A)
+I (F:\software_and_user\mdk4.7\ARM\ARMCC\include\stdint.h)(0x51C7B744)
+I (F:\software_and_user\mdk4.7\ARM\CMSIS\Include\core_cmInstr.h)(0x51C7B54A)
+I (F:\software_and_user\mdk4.7\ARM\CMSIS\Include\core_cmFunc.h)(0x51C7B54A)
+I (F:\software_and_user\mdk4.7\ARM\CMSIS\Include\core_cm4_simd.h)(0x51C7B54A)
+I (D:\Code\ucosii_video\Libraries\CMSIS\Device\ST\STM32F4xx\Include\system_stm32f4xx.h)(0x4EC0F5E8)
+I (D:\Code\ucosii_video\User\stm32f4xx_conf.h)(0x4E89A172)
+I (D:\Code\ucosii_video\Libraries\STM32F4xx_StdPeriph_Driver\inc\stm32f4xx_adc.h)(0x4EC0F5EA)
+I (D:\Code\ucosii_video\Libraries\STM32F4xx_StdPeriph_Driver\inc\stm32f4xx_can.h)(0x4EC0F5EA)
+I (D:\Code\ucosii_video\Libraries\STM32F4xx_StdPeriph_Driver\inc\stm32f4xx_crc.h)(0x4EC0F5EA)
+I (D:\Code\ucosii_video\Libraries\STM32F4xx_StdPeriph_Driver\inc\stm32f4xx_cryp.h)(0x4EC0F5EA)
+I (D:\Code\ucosii_video\Libraries\STM32F4xx_StdPeriph_Driver\inc\stm32f4xx_dac.h)(0x4EC0F5EA)
+I (D:\Code\ucosii_video\Libraries\STM32F4xx_StdPeriph_Driver\inc\stm32f4xx_dbgmcu.h)(0x4EC0F5EA)
+I (D:\Code\ucosii_video\Libraries\STM32F4xx_StdPeriph_Driver\inc\stm32f4xx_dcmi.h)(0x4EC0F5EA)
+I (D:\Code\ucosii_video\Libraries\STM32F4xx_StdPeriph_Driver\inc\stm32f4xx_dma.h)(0x4EC0F5EA)
+I (D:\Code\ucosii_video\Libraries\STM32F4xx_StdPeriph_Driver\inc\stm32f4xx_exti.h)(0x4EC0F5EC)
+I (D:\Code\ucosii_video\Libraries\STM32F4xx_StdPeriph_Driver\inc\stm32f4xx_flash.h)(0x4EC0F5EC)
+I (D:\Code\ucosii_video\Libraries\STM32F4xx_StdPeriph_Driver\inc\stm32f4xx_fsmc.h)(0x4EC0F5EC)
+I (D:\Code\ucosii_video\Libraries\STM32F4xx_StdPeriph_Driver\inc\stm32f4xx_hash.h)(0x4EC0F5EC)
+I (D:\Code\ucosii_video\Libraries\STM32F4xx_StdPeriph_Driver\inc\stm32f4xx_gpio.h)(0x4EC0F5EC)
+I (D:\Code\ucosii_video\Libraries\STM32F4xx_StdPeriph_Driver\inc\stm32f4xx_i2c.h)(0x4EC0F5EC)
+I (D:\Code\ucosii_video\Libraries\STM32F4xx_StdPeriph_Driver\inc\stm32f4xx_iwdg.h)(0x4EC0F5EC)
+I (D:\Code\ucosii_video\Libraries\STM32F4xx_StdPeriph_Driver\inc\stm32f4xx_pwr.h)(0x4EC0F5EC)
+I (D:\Code\ucosii_video\Libraries\STM32F4xx_StdPeriph_Driver\inc\stm32f4xx_rcc.h)(0x4EC0F5EC)
+I (D:\Code\ucosii_video\Libraries\STM32F4xx_StdPeriph_Driver\inc\stm32f4xx_rng.h)(0x4EC0F5EC)
+I (D:\Code\ucosii_video\Libraries\STM32F4xx_StdPeriph_Driver\inc\stm32f4xx_rtc.h)(0x4EC0F5EC)
+I (D:\Code\ucosii_video\Libraries\STM32F4xx_StdPeriph_Driver\inc\stm32f4xx_sdio.h)(0x4EC0F5EC)
+I (D:\Code\ucosii_video\Libraries\STM32F4xx_StdPeriph_Driver\inc\stm32f4xx_spi.h)(0x4EC0F5EC)
+I (D:\Code\ucosii_video\Libraries\STM32F4xx_StdPeriph_Driver\inc\stm32f4xx_syscfg.h)(0x4EC0F5EC)
+I (D:\Code\ucosii_video\Libraries\STM32F4xx_StdPeriph_Driver\inc\stm32f4xx_tim.h)(0x4EC0F5EC)
+I (D:\Code\ucosii_video\Libraries\STM32F4xx_StdPeriph_Driver\inc\stm32f4xx_usart.h)(0x4EC0F5EC)
+I (D:\Code\ucosii_video\Libraries\STM32F4xx_StdPeriph_Driver\inc\stm32f4xx_wwdg.h)(0x4EC0F5EC)
+I (D:\Code\ucosii_video\Libraries\STM32F4xx_StdPeriph_Driver\inc\misc.h)(0x4EC0F5EA)
