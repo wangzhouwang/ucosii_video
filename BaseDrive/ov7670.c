@@ -23,8 +23,9 @@
 #include "lcd.h"
 #include "ov7670_table.h"
 
+#define LCD_BUF_SIZE    16
 //uint32_t LCD_BUF[32000]={Blue};
- uint32_t LCD_BUF[20000]={Blue};
+ uint32_t LCD_BUF[LCD_BUF_SIZE]={Blue};
 
 static void _delay(uint32_t dl)
 {
@@ -100,7 +101,7 @@ static void port_dma_init(void)
 	DMA_InitStructure.DMA_PeripheralBaseAddr = DCMI_DR_ADDRESS;	
 	DMA_InitStructure.DMA_Memory0BaseAddr = (uint32_t)LCD_BUF;
 	DMA_InitStructure.DMA_DIR = DMA_DIR_PeripheralToMemory;
-	DMA_InitStructure.DMA_BufferSize = 20000;
+	DMA_InitStructure.DMA_BufferSize = LCD_BUF_SIZE;
 	DMA_InitStructure.DMA_PeripheralInc = DMA_PeripheralInc_Disable;
 	DMA_InitStructure.DMA_MemoryInc = DMA_MemoryInc_Enable;
 	DMA_InitStructure.DMA_PeripheralDataSize = DMA_PeripheralDataSize_Word;
@@ -136,7 +137,7 @@ void dma_out_lcd_config(void)
 	DMA_InitStructure.DMA_PeripheralBaseAddr = (uint32_t)LCD_BUF;	
 	DMA_InitStructure.DMA_Memory0BaseAddr = (uint32_t)&LCD_RAM;
 	DMA_InitStructure.DMA_DIR = DMA_DIR_MemoryToMemory;
-	DMA_InitStructure.DMA_BufferSize = 20000;
+	DMA_InitStructure.DMA_BufferSize = LCD_BUF_SIZE;
 	DMA_InitStructure.DMA_PeripheralInc = DMA_PeripheralInc_Enable;
 	DMA_InitStructure.DMA_MemoryInc = DMA_MemoryInc_Disable;
 	DMA_InitStructure.DMA_PeripheralDataSize = DMA_PeripheralDataSize_Word;
